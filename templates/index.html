@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breast Cancer Detection</title>
+    <style>
+       
+    </style>
+</head>
+<body>
+  <h1>Breast Cancer Detection</h1>
+  <form action="/predict" method="POST">
+  
+      <label>Mean Radius:</label>
+      <input type="text" name="mean_radius" required><br>
+  
+      <label>Mean Perimeter:</label>
+      <input type="text" name="mean_perimeter" required><br>
+  
+      <label>Mean Concave Points:</label>
+      <input type="text" name="mean_concave_points" required><br>
+  
+      <label>Worst Perimeter:</label>
+      <input type="text" name="worst_perimeter" required><br>
+  
+      <label>Worst Area:</label>
+      <input type="text" name="worst_area" required><br>
+  
+      <button type="submit">Predict</button>
+  </form>
+  
+    </form>
+
+    {% if prediction_text %}
+    <h2>{{ prediction_text }}</h2>
+    <!-- <h2 style="color: {{ color }};">{{ prediction_text }}</h2> -->
+    {% endif %}
+</body>
+</html>
